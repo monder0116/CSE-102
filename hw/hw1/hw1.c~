@@ -1,0 +1,52 @@
+/* author:Mehmet ÖNDER */
+#include "stdio.h"
+
+
+int main()
+{
+	/* We are define the all variables to get the values from user and assign to them*/ 
+	float Mid1Weight,Mid2Weight,Mid3Weight;
+	float Hw1Weight,Hw2Weight;
+	float FinalWeight;
+	float Mid1Grade,Mid2Grade,Mid3Grade;
+	float Hw1Grade,Hw2Grade;
+	float FinalGrade;
+	/* Ask to user and take the values to assign them */
+	printf("Please Enter the 1.midterm Weight:");
+	scanf("%f",&Mid1Weight);
+	printf("\nPlease Enter the 2.midterm Weight:");
+	scanf("%f",&Mid2Weight);
+	printf("\nPlease Enter the 3.midterm Weight:");
+	scanf("%f",&Mid3Weight);
+	printf("\nPlease Enter the 1.homework Weight:");
+	scanf("%f",&Hw1Weight);
+	printf("\nPlease Enter the 2.homework Weight:");
+	scanf("%f",&Hw2Weight);
+	printf("\nPlease Enter the Final exam Weight:");
+	scanf("%f",&FinalWeight);
+	printf("\nPlease Enter the 1.midterm grade:");
+	scanf("%f",&Mid1Grade);
+	printf("\nPlease Enter the 2.midterm grade:");
+	scanf("%f",&Mid2Grade);
+	printf("\nPlease Enter the 3.midterm grade:");
+	scanf("%f",&Mid3Grade);
+	printf("\nPlease Enter the 1.homework grade:");
+	scanf("%f",&Hw1Grade);
+	printf("\nPlease Enter the 2.homework grade:");
+	scanf("%f",&Hw2Grade);
+	printf("\nPlease Enter the Final exam grade:");
+	scanf("%f",&FinalGrade);
+
+	/*we are define the variable to calculate the all notes */
+	float Calculate;
+	/*Assign to values which calulate with weight and grade*/
+	Calculate = (Mid1Grade*Mid1Weight/100) + 			(Mid2Grade*Mid2Weight/100) + 
+		(Mid3Grade*Mid3Weight/100) + 
+		(Hw1Grade*Hw1Weight/100) + 
+		(Hw2Grade*Hw2Weight/100) + 
+		(FinalGrade*FinalWeight/100);
+	/*we are show the result only 4 digit */
+	printf("Your final grade is:%.2f",Calculate);
+
+	return 0;	
+}

@@ -1,0 +1,101 @@
+  a b c d e f g h
+  - - - - - - - -
+8|r n b q k b n r|
+7|p p p p p p p p|
+6|               |
+5|               |
+4|               |
+3|               |
+2|P P P P P P P P|
+1|R N B Q K B N R|
+  - - - - - - - -
+White player move > e2 e3
+  a b c d e f g h
+  - - - - - - - -
+8|r n b q k b n r|
+7|p p p p p p p p|
+6|               |
+5|               |
+4|               |
+3|        P      |
+2|P P P P   P P P|
+1|R N B Q K B N R|
+  - - - - - - - -
+Black player move > b2 b3
+Illegal piece. 
+  a b c d e f g h
+  - - - - - - - -
+8|r n b q k b n r|
+7|p p p p p p p p|
+6|               |
+5|               |
+4|               |
+3|        P      |
+2|P P P P   P P P|
+1|R N B Q K B N R|
+  - - - - - - - -
+Black player move > d7 d6
+  a b c d e f g h
+  - - - - - - - -
+8|r n b q k b n r|
+7|p p p   p p p p|
+6|      p        |
+5|               |
+4|               |
+3|        P      |
+2|P P P P   P P P|
+1|R N B Q K B N R|
+  - - - - - - - -
+White player move > d1 f3
+  a b c d e f g h
+  - - - - - - - -
+8|r n b q k b n r|
+7|p p p   p p p p|
+6|      p        |
+5|               |
+4|               |
+3|        P Q    |
+2|P P P P   P P P|
+1|R N B   K B N R|
+  - - - - - - - -
+Black player move > b7 b6
+  a b c d e f g h
+  - - - - - - - -
+8|r n b q k b n r|
+7|p   p   p p p p|
+6|  p   p        |
+5|               |
+4|               |
+3|        P Q    |
+2|P P P P   P P P|
+1|R N B   K B N R|
+  - - - - - - - -
+White player move > f3 c6
+Check!
+   a b c d e f g h
+  - - - - - - - -
+8|r n b q k b n r|
+7|p   p   p p p p|
+6|  p Q p        |
+5|               |
+4|               |
+3|        P      |
+2|P P P P   P P P|
+1|R N B   K B N R|
+  - - - - - - - -
+Black player move > b6 b5
+Your king is in check!
+  a b c d e f g h
+  - - - - - - - -
+8|r n b q k b n r|
+7|p   p   p p p p|
+6|  p Q p        |
+5|               |
+4|               |
+3|        P      |
+2|P P P P   P P P|
+1|R N B   K B N R|
+  - - - - - - - -
+Black player move > b6 b5
+Your king is in check!
+White player WINS!

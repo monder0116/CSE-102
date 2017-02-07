@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main()
+{
+
+	int i1;
+	double d1;
+	i1=16.5/5;
+	d1=16.5/5;
+	printf("Değişken int iken:%d , double iken:%f",i1,d1);
+
+	
+}

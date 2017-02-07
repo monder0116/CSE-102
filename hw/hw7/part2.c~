@@ -1,0 +1,145 @@
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265
+
+int reflection(int angle);
+int kickDisc(double wallWidth, double wallHeight, double ballCenterX, double kickAngle, double ballRadius, double goalWidth);
+
+int main()
+{
+	int a=kickDisc(10, 26, 2, 45, 1, 2);
+	printf("%d \n",a );
+
+	return 0;
+}
+
+
+int kickDisc(double wallWidth, double wallHeight, double ballCenterX, double
+kickAngle, double ballRadius, double goalWidth)
+{
+	double x,h;
+	int temp;
+	if (kickAngle<0)
+	{
+		temp=-kickAngle;
+	}else
+	{
+		temp=kickAngle;
+	}
+ 	if (temp>90)
+	{
+		temp=180-temp;
+
+	}
+	x=wallWidth-(ballCenterX+ballRadius);
+	h=x*tan(PI*temp/180);
+	printf("%f ile geldi\n", kickAngle);
+	if (h<wallHeight) 
+	{
+		
+		ballCenterX=ballRadius;
+		kickAngle*=-1;
+		printf("ballCenterX=%f , angle =%f , h =%f , x=%f \n",ballCenterX,kickAngle,h,x );
+		kickDisc(wallWidth,wallHeight-h,ballCenterX,kickAngle,ballRadius,goalWidth);
+	}
+	else if(kickAngle==90)
+	{
+		double left,right;
+		left=ballCenterX- ballRadius;
+		right=ballCenterX+ballRadius;
+		double goalleft,goalright;
+		goalleft=wallWidth/2- goalWidth/2;
+		goalright=wallWidth/2+ goalWidth/2;
+		if (left<goalleft && right<goalleft || left>goalleft && left>goalright)
+		{
+			return 0;
+		}
+		else
+		{
+			return 1;
+		}
+	}
+	else if ( kickAngle<0)
+	{
+		printf("****************************************************\n\n");
+		//printf("en son sola çarptı\n");
+		printf("************%f ile son gelişini yaptı \n",kickAngle );
+		double x2;
+		if (wallHeight>ballRadius)
+		{
+			wallHeight-=ballRadius;
+		}
+		
+		x+=ballRadius;
+		h=x*tan(PI*temp/180);
+		x2=wallHeight*x/h;
+		printf("wallHeight=%f\n",wallHeight );
+		printf("h=%f\n",h );
+		printf("a=%f\n",kickAngle );
+		printf("x1=%f\n",x );
+		printf("x2=%f \n", x2);
+		if (x2>=wallWidth/2 - goalWidth/2 && x2<=wallWidth/2+goalWidth/2)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	else if( kickAngle>0)
+	{
+		printf("****************************************************\n\n");
+		//printf("en son sağa çarptı\n");
+		printf("************%f ile son gelişini yaptı \n",kickAngle );
+		double x2;
+		kickAngle=-kickAngle;
+		if (wallHeight>ballRadius)
+		{
+			wallHeight-=ballRadius;
+		}
+		x+=ballRadius;
+		h=x*tan(PI*temp/180);
+		x2=wallWidth-(wallHeight*x/h);
+		printf("wallHeight=%f\n",wallHeight );
+		printf("h=%f\n",h );
+		printf("a=%f\n",kickAngle );
+		printf("x1=%f\n",x );
+		printf("x2=%f \n", x2);
+		if (x2>=wallWidth/2 - goalWidth/2 && x2<=wallWidth/2+goalWidth/2)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
+}
+int reflection(int angle)
+{
+	if (angle<0)
+	{
+		angle=-1*angle;
+	}
+	int a=randNumber(angle) % (6);
+	if (a+angle>=5 && a+angle<=175)
+	{
+		return a+angle;
+	}
+	if (a+angle<5)
+	{
+		return 5;
+	}
+	else if (a+angle>175)
+	{
+		return 175;
+	}
+	
+} 
+int randNumber(int angle){
+	srand(angle);
+	return rand();
+}
